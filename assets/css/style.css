@@ -57,11 +57,23 @@
   border: 1px solid white;
   display: block;
   color: white;
+  height: 100%;
 }
 
 .sidebar a:hover {
   color: white;
   background-color: #0342ab;
+}
+
+.sidebar-img{
+  height: 30px !important;
+  width: 30px !important;
+  margin-top: 6px;
+}
+
+#sidebar-img{
+  height: 30px !important;
+  width: 30px !important;
 }
 
 .sidebar a:active {
@@ -112,13 +124,19 @@
 }
 
 .tab-pane a {
-  padding: 10px;
-  /* justify-content: center; */
+  padding: 5px;
+}
+
+.tool_img {
+  max-width: 25%;
+  height: 20px !important;
+  margin-top: 3px;
 }
 
 @media screen and (min-width:700px) and (max-width:1236px) {
   .tool_img {
-     max-width: 25%;
+    max-width: 25%;
+    height: 20px !important;
   }
 }
 
@@ -142,7 +160,8 @@
   }
 
   .tool_img {
-     max-width: 100%;
+    max-width: 100%;
+    height: 20px !important;
   }
 
   .popup {
@@ -5397,3 +5416,7 @@ footer .copyright p span {
     padding-bottom: 25px;
   }
 }/*# sourceMappingURL=style.css.map */
+
+.tab-pane a:hover {
+  text-decoration: none;
+}

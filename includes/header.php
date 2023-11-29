@@ -46,8 +46,8 @@
 			</div>
 			<div class="row align-items-center">
 				<div class="col-md-4 text-start">
-					<ul class="menu">
-						<li class="dropdown-nav">
+					<ul class="menu m-0 p-0">
+						<li class="dropdown-nav m-0">
 							<a href="#">About Us</a> <i class="fas fa-caret-down"></i>
 
 							<ul class="dropdown">
@@ -64,7 +64,7 @@
 								<li><a href=<?php echo $siteurl."partnership-programs.php" ?>>Partnership Programs</a></li>
 							</ul>
 						</li>
-						<li class="dropdown-nav">
+						<li class="dropdown-nav m-0">
 							<a href="#">INVESTMENT CHOICES</a> <i class="fas fa-caret-down"></i>
 
 							<ul class="dropdown">
@@ -76,7 +76,7 @@
 								<li><a href=<?php echo $siteurl."commodities.php" ?>>Commodities</a></li>
 							</ul>
 						</li>
-						<li class="dropdown-nav">
+						<li class="dropdown-nav m-0">
 							<a href="#">PLATFORMS</a> <i class="fas fa-caret-down"></i>
 
 							<ul class="dropdown">
@@ -91,12 +91,12 @@
 				</div>
 				<div class="col-md-4 text-center">
 					<a href="./" class="logo">
-						<img src=<?php echo $siteurl."assets/images/logo.png"; ?> alt="">
+						<img src=<?php echo $siteurl."assets/images/logo.png"; ?> alt="404">
 					</a>
 				</div>
 				<div class="col-md-4 text-end">
-					<ul class="menu">
-						<li class="dropdown-nav">
+					<ul class="menu m-0">
+						<li class="dropdown-nav m-0">
 							<a href="#">PARTNERSHIP</a> <i class="fas fa-caret-down"></i>
 
 							<ul class="dropdown">
@@ -108,7 +108,7 @@
 								<li><a href=<?php echo $siteurl."white-label.php" ?>>White Labels</a></li>
 							</ul>
 						</li>
-						<li class="dropdown-nav">
+						<li class="dropdown-nav m-0">
 							<a href="#">TOOLS</a> <i class="fas fa-caret-down"></i>
 
 							<ul class="dropdown">
@@ -121,7 +121,7 @@
 							</ul>
 						</li>
 						
-						<li class="nav-btn"><a href="contact-us.php">Contact Us</a></li>
+						<li class="nav-btn m-0"><a href="contact-us.php">Contact Us</a></li>
 					</ul>
 				</div>
 			</div>
@@ -216,15 +216,66 @@
 		</div>
 	</div>
 </header>
-<div class="dashboard-subheader-bg">
-      <div class="dashboard-subheader-box">
-         <div class="position">
-            <h5 class="text-white">Control Panel | <?php echo substr(str_replace('-',' ',$uriSegments[3]),0,strlen($uriSegments[3])-4); ?></h5>
-            <p class="text-white font-size">
-				<a href='<?php echo $siteurl."index.php" ?>' class="text-white">Home</a> > <a href='<?php echo $siteurl."cpanel/account-overview.php?tab=1" ?>' class="text-white">Dashboard </a> > <span id="routeText"></span></p>
-         </div>
-      </div>
-    </div>
+
+<?php
+$uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+// echo $uriSegments[3];
+
+$routeName = ''; // Initialize $routeName
+
+if ($uriSegments[3] === "account-overview.php") {
+	$routeName = "Account Overview";
+} else if ($uriSegments[3] === "open-live-account.php") {
+	$routeName = "Open Live Account";
+} else if ($uriSegments[3] === "open-demo-account.php") {
+	$routeName = "Open Demo Account";
+} else if ($uriSegments[3] === "add-existing-account.php") {
+	$routeName = "Add Existing Account";
+} else if ($uriSegments[3] === "live-account.php") {
+	$routeName = "Live Account";
+} else if ($uriSegments[3] === "deposit.php") {
+	$routeName = "Deposit";
+} else if($uriSegments[3] === "withdraw.php") {
+	$routeName = "Withdraw";
+} else if($uriSegments[3] === "internal-transfers.php") {
+	$routeName = "Internal Transfers";
+} else if($uriSegments[3] === "copy-trade.php") {
+	$routeName = "Copy Trade";
+} else if($uriSegments[3] === "transactional-history.php") {
+	$routeName = "Transactional History";
+} else if($uriSegments[3] === "referral-system.php") {
+	$routeName = "Referral System";
+} else if($uriSegments[3] === "my-referral.php") {
+	$routeName = "My Referral";
+} else if($uriSegments[3] === "password-change.php") {
+	$routeName = "Password Change";
+} else if($uriSegments[3] === "download-center.php") {
+	$routeName = "Download Center";
+} else if($uriSegments[3] === "ebooks.php") {
+	$routeName = "Ebooks";
+} else if($uriSegments[3] === "economic-calendar.php") {
+	$routeName = "Economic Calendar";
+} else if($uriSegments[3] === "pip-calculators.php") {
+	$routeName = "Pip Calculators";
+} else if($uriSegments[3] === "forex-heatmap.php") {
+	$routeName = "Forex Heatmap";
+}
+?>
+
+<?php if(!isset($_SESSION['sessionuser'])) { ?> 
+	<div></div>
+	<?php } else { ?>
+	<div class="dashboard-subheader-bg">
+	<div class="dashboard-subheader-box">
+		<div class="position">
+			<h5 class="text-white fs-5 mb-2">Control Panel |<?php echo $routeName; ?></h5>
+			<p class="text-white font-size">Home > Dashboard > <?php echo $routeName; ?></span></p>
+		</div>
+	</div>
+</div>
+<?php } ?>
+
+
 <script>
    $(document).ready(function(){
 	$('#logout').on('click',function(e){

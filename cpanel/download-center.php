@@ -13,15 +13,7 @@
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <style>
-        .body {
-            background-color: #F0F0F0;
-        }
-
-        .border-bottom-80 {
-            border-bottom: 1px solid #DEE2E6;
-            /* or your preferred border color */
-            height: 80%;
-        }
+        
 
         .card {
             border-radius: 10px;
