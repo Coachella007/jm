@@ -3,7 +3,7 @@
 global $webeurl;
 $webeurl = 'https://mute-recipe-6869.on.fleek.co/';
 $servername = 'sql.freedb.tech';
-$username = freedb_coachella';
+$username = 'freedb_coachella';
 $password = 'RMvSDaBEGv4u';
 $dbname = 'freedb_betterholding';
 global $conn;
