@@ -1,11 +1,11 @@
 <?php 
 
 global $webeurl;
-$webeurl = 'https://jmibroker.net/';
-$servername = 'localhost';
-$username = 'root';
+$webeurl = 'https://mute-recipe-6869.on.fleek.co/';
+$servername = 'sql.freedb.tech';
+$username = 'freedb_coachella@130.61.50.164';
 $password = '';
-$dbname = 'jmi';
+$dbname = 'freedb_betterholding';
 global $conn;
 $conn = new mysqli( $servername, $username, $password, $dbname );
 // Check connection
