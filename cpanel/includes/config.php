@@ -4,12 +4,12 @@ session_start();
 
 global $siteurl;
 global $webeurl;
-$siteurl = 'https://jmibroker.net/';
-$webeurl = 'https://jmibroker.net/';
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'jmi';
+$siteurl = 'https://mute-recipe-6869.on.fleek.co/';
+$webeurl = 'https://mute-recipe-6869.on.fleek.co/';
+$servername = 'sql.freedb.tech';
+$username = 'freedb_coachella';
+$password = 'RMvSDaBEGv4u';
+$dbname = 'freedb_betterholding';
 global $conn;
 $conn = new mysqli( $servername, $username, $password, $dbname );
 // Check connection
